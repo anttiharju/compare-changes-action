@@ -13,7 +13,7 @@ inputs:
   version:
     description: "compare-changes version to use, semver format without v prefix"
     required: false
-    default: "0.8.15"
+    default: "0.8.16"
   debug:
     description: "Enable compare-changes --debug output (true/false)"
     required: false
@@ -54,7 +54,7 @@ runs:
         "$GITHUB_ACTION_PATH/bin/install.sh"
     - name: Run
       id: wildcard
-      shell: sh
+      shell: bash
       env:
         WILDCARD: ${{ inputs.github-workflows-wildcard }}
         CHANGES: ${{ inputs.changes }}
