@@ -13,7 +13,7 @@ inputs:
   version:
     description: "compare-changes version to use, semver format without v prefix"
     required: false
-    default: "0.10.4"
+    default: "0.10.5"
   debug:
     description: "Enable compare-changes --debug output (true/false)"
     required: false
@@ -38,7 +38,7 @@ runs:
     - if: steps.binary.outputs.installed != 'true'
       name: Cache
       id: cache
-      uses: actions/cache@v5
+      uses: actions/cache@v6
       with:
         path: /usr/local/bin/compare-changes
         key: compare-changes_v${{ inputs.version }}_${{ steps.convert.outputs.target }}
